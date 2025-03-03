@@ -1,0 +1,158 @@
+section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .c-box {
+    max-width: 500px;
+    width: 100%;
+    background-color: var(--grayLight);
+    padding: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .c-form {
+    label {
+      width: 100%;
+      display: flex;
+      gap: 0.5rem;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+
+      input {
+        padding: 10px 0px 10px 10px;
+        border-radius: 5px;
+        border: 2px solid var(--gray);
+        color: var(--gray);
+        outline: none;
+        transition: all 0.3s ease-in-out;
+        font-size: 0.8rem;
+
+        &:focus {
+          border: 2px solid var(--blue);
+        }
+      }
+    }
+
+    .c-create {
+      max-width: 200px;
+      width: 100%;
+      padding: 10px 0;
+      border: 2px solid var(--gray);
+      border-radius: 5px;
+      font-size: 0.9rem;
+      background-color: var(--blue);
+      color: var(--grayLight);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        border-color: var(--grayLight);
+        background-color: var(--red);
+      }
+    }
+  }
+
+  .c-list {
+    .c-filter {
+      width: 100%;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .c-buttonFilter {
+        display: flex;
+        gap: 2rem;
+
+        button {
+          border: none;
+          font-size: 0.9rem;
+          color: var(--blue);
+          cursor: pointer;
+          border-bottom: 1px solid var(--blue);
+          padding: 5px 0;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            border-color: var(--red);
+            color: var(--red);
+          }
+        }
+        button.active {
+          color: var(--red);
+          border-color: var(--red);
+        }
+      }
+
+      .c-darkMode {
+        button {
+          background-color: transparent;
+          border: none;
+          font-size: 1.4rem;
+          cursor: pointer;
+          color: var(--gray);
+        }
+      }
+    }
+
+    .c-tasks {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .task-label {
+        font-size: 0.9rem;
+        color: var(--gray);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        span {
+          margin-left: 0.5rem;
+        }
+
+        input[type="checkbox"] {
+          accent-color: var(--blue);
+        }
+
+        input:checked + span {
+          text-decoration: line-through;
+          color: var(--gray);
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+.erro {
+  border-color: var(--red) !important;
+  color: var(--red) !important;
+}
+.erro-message {
+  color: var(--red);
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 320px) {
+  section {
+    .c-form {
+      .c-create {
+        max-width: 140px;
+      }
+    }
+
+    .c-list {
+      .c-filter {
+        flex-direction: column-reverse;
+        align-items: start;
+        gap: 0.5rem;
+      }
+    }
+  }
+}

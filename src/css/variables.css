@@ -1,0 +1,12 @@
+:root {
+  --blue: #1e3a8a;
+  --blueLight: #60a5fa;
+  --gray: #374151;
+  --grayLight: #f3f4f6;
+  --green: #10b981;
+  --red: #ef4444;
+}
+
+.darkMode {
+  --blue: #374151;
+}
