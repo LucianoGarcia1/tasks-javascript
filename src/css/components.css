@@ -126,6 +126,20 @@ section {
           opacity: 0.7;
         }
       }
+
+      .delete-btn {
+        background-color: transparent;
+        border: none;
+        margin-left: 1rem;
+        color: var(--blue);
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--red);
+        }
+      }
     }
   }
 }

@@ -35,9 +35,20 @@ const toggleTask = (taskText) => {
     task.text === taskText ? { ...task, completed: !task.completed } : task
   );
   saveTaskLocal(tasks);
+
+  const label = document.querySelector(`[data-task="${taskText}"]`);
+  if (label) {
+    const span = label.querySelector(".task-text");
+    span.classList.toggle("completed");
+  }
+
+  const activeFilter = document.querySelector(".c-buttonFilter .active");
+  const filterIndex = [...btnFilters].indexOf(activeFilter);
+  filterTasks(filterIndex);
 };
 
 const loadTasks = () => {
+  taskList.innerHTML = "";
   const tasks = getTasksLocal();
   tasks.forEach((task) => createTask(task.text, task.completed));
 };
@@ -81,6 +92,6 @@ btnFilters.forEach((btn, i) => {
 
     btn.classList.add("active");
 
-    filterTasks(i);
+    filterTasks(i, toggleTask);
   });
 });

@@ -1,7 +1,7 @@
 import { getTasksLocal } from "./storage.js";
 import { createTaskElement } from "./dom.js";
 
-export const filterTasks = (filterType) => {
+export const filterTasks = (filterType, toggleTask) => {
   const taskList = document.querySelector(".c-tasks");
   taskList.innerHTML = "";
 
@@ -15,7 +15,11 @@ export const filterTasks = (filterType) => {
   }
 
   filteredTasks.forEach((task) => {
-    const taskElement = createTaskElement(task.text, task.completed);
+    const taskElement = createTaskElement(
+      task.text,
+      task.completed,
+      toggleTask
+    );
     taskList.appendChild(taskElement);
   });
 };
