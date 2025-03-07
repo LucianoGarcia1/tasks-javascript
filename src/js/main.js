@@ -19,28 +19,6 @@ const createTask = (text, completed = false) => {
 
   const tasks = getTasksLocal();
 
-  const taskExists = tasks.some(
-    (task) => task.text.toLowerCase() === taskText.toLowerCase()
-  );
-
-  if (taskExists) {
-    Toastify({
-      text: "This task already exists!",
-      duration: 4000,
-      close: true,
-      gravity: "top",
-      position: "right",
-      style: {
-        background: "#ef4444",
-        color: "#fff",
-        borderRadius: "5px",
-        padding: "1rem",
-        fontSize: "1rem",
-      },
-    }).showToast();
-    return;
-  }
-
   const taskElement = createTaskElement(taskText, completed, toggleTask);
   taskList.appendChild(taskElement);
 
